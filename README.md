@@ -3,16 +3,15 @@
 An ASP.NET MVC e-commerce web application with separate **Admin** and **User** views — product catalog, cart, checkout, and PayPal Sandbox integration.
 
 ## Screenshots
-
-<img width="959" height="368" alt="image" src="https://github.com/user-attachments/assets/4a0162c5-8dc0-49df-bb47-0fda18b08294" />
-<img width="958" height="368" alt="image" src="https://github.com/user-attachments/assets/6c7f8b52-0cdd-4425-80a6-2f5255baa4cd" />
-<img width="956" height="374" alt="image" src="https://github.com/user-attachments/assets/d0f807b2-e1e3-4679-8aa8-5c1498c66b01" />
-<img width="956" height="373" alt="image" src="https://github.com/user-attachments/assets/58d0e913-e508-41f0-88d5-ead83d05708f" />
-<img width="941" height="376" alt="image" src="https://github.com/user-attachments/assets/480966c7-b346-4cd8-aba4-4ed95c2406e6" />
-<img width="946" height="374" alt="image" src="https://github.com/user-attachments/assets/6912a5b1-bad4-4749-871e-b5953011dab6" />
-<img width="944" height="376" alt="image" src="https://github.com/user-attachments/assets/27af93cd-2b07-40e5-86d1-4b23d6a93119" />
-<img width="948" height="304" alt="image" src="https://github.com/user-attachments/assets/196f7dff-730c-45bd-8386-3140fc1539d2" />
-
+<img width="959" height="368" alt="Screenshot 2026-07-08 053616" src="https://github.com/user-attachments/assets/186a192f-4d47-4539-8fca-a7322d8e3bd2" />
+<img width="956" height="374" alt="Screenshot 2026-07-08 053635" src="https://github.com/user-attachments/assets/45987c46-28e3-4b7c-8b63-deba826dd532" />
+<img width="958" height="368" alt="Screenshot 2026-07-08 053646" src="https://github.com/user-attachments/assets/062298b5-4a8e-4002-84be-c0494272113e" />
+<img width="956" height="373" alt="Screenshot 2026-07-08 053659" src="https://github.com/user-attachments/assets/58b21ec5-fbcf-4632-b99c-766891c5203b" />
+<img width="944" height="375" alt="Screenshot 2026-07-08 053918" src="https://github.com/user-attachments/assets/f188cee4-4bd7-44f1-aa4c-0219da793181" />
+<img width="941" height="376" alt="Screenshot 2026-07-08 053929" src="https://github.com/user-attachments/assets/9a5418a5-df19-4b7f-9fa0-3b216007b004" />
+<img width="946" height="374" alt="Screenshot 2026-07-08 053955" src="https://github.com/user-attachments/assets/9a94a949-6121-4ffa-8487-3a41c0f701e6" />
+<img width="948" height="304" alt="Screenshot 2026-07-08 054025" src="https://github.com/user-attachments/assets/65aedcf3-cb9c-41f8-8c9a-3915b583c638" />
+<img width="944" height="376" alt="Screenshot 2026-07-08 054009" src="https://github.com/user-attachments/assets/95ebbdd7-4cea-41e6-9b9b-e499efb74230" />
 
 ## Features
 
