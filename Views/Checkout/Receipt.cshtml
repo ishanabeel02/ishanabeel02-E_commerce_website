@@ -1,0 +1,43 @@
+﻿@model YourApp.Controllers.ReceiptViewModel
+@{
+    ViewBag.Title = "Receipt";
+}
+
+<div class="receipt-container" style="max-width:480px;margin:40px auto;padding:24px;border:1px solid #e0e0e0;border-radius:8px;">
+
+    <div style="text-align:center;margin-bottom:24px;">
+        <h2 style="color:#2e7d32;">✓ Payment Successful</h2>
+        <p>Thank you for your order!</p>
+    </div>
+
+    <table style="width:100%;border-collapse:collapse;">
+        <tr>
+            <td style="padding:8px 0;color:#666;">Order ID</td>
+            <td style="padding:8px 0;text-align:right;font-family:monospace;">@Model.OrderId</td>
+        </tr>
+        <tr>
+            <td style="padding:8px 0;color:#666;">Status</td>
+            <td style="padding:8px 0;text-align:right;">@Model.Status</td>
+        </tr>
+        <tr>
+            <td style="padding:8px 0;color:#666;">Amount Paid</td>
+            <td style="padding:8px 0;text-align:right;font-weight:bold;">
+                @Model.Amount @Model.CurrencyCode
+            </td>
+        </tr>
+        <tr>
+            <td style="padding:8px 0;color:#666;">Payer Email</td>
+            <td style="padding:8px 0;text-align:right;">@Model.PayerEmail</td>
+        </tr>
+        <tr>
+            <td style="padding:8px 0;color:#666;">Date</td>
+            <td style="padding:8px 0;text-align:right;">@Model.CaptureTime</td>
+        </tr>
+    </table>
+
+    <div style="margin-top:24px;text-align:center;">
+        <a href="@Url.Action("Index", "Home")" class="btn">Continue Shopping</a>
+        <button onclick="window.print()" class="btn" style="margin-left:8px;">Print Receipt</button>
+    </div>
+
+</div>

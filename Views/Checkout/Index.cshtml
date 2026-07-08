@@ -1,0 +1,65 @@
+﻿@{
+    ViewBag.Title = "Checkout";
+}
+
+<div class="checkout-container" style="max-width:480px;margin:40px auto;padding:24px;border:1px solid #e0e0e0;border-radius:8px;">
+    <h2>Checkout</h2>
+
+    <div id="order-summary" style="margin-bottom:24px;">
+        <!-- Replace with your actual cart total, pulled from your Cart model/session -->
+        <p>Order Total: <strong>$@Model.OrderTotal.ToString("0.00")</strong></p>
+    </div>
+
+    <div id="paypal-button-container"></div>
+
+    <div id="result-message" style="margin-top:16px;"></div>
+</div>
+
+<!--
+  SANDBOX CLIENT ID:
+  Replace YOUR_SANDBOX_CLIENT_ID with the Client ID from
+  developer.paypal.com -> Apps & Credentials -> Sandbox -> your app
+-->
+<script src="https://www.paypal.com/sdk/js?client-id=AYvOrK7lEHdvmmDHeo0cRSAEchN8qhhgsQGdir03p72F-97slwUDxNLr8OYNGjJEe6H-bphieBcM00uQ&currency=USD"></script>
+
+
+<script>
+    paypal.Buttons({
+        // Step 1: Create the order. This calls your own backend, NOT PayPal directly,
+        // so the amount is set server-side (never trust a client-supplied amount).
+       createOrder: function (data, actions) {
+    return fetch('/Checkout/CreateOrder', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            total: parseFloat('@Model.OrderTotal.ToString(System.Globalization.CultureInfo.InvariantCulture)')
+        })
+    })
+    .then(function (res) { return res.json(); })
+    .then(function (orderData) { return orderData.id; });
+},
+        // Step 2: Capture payment after the buyer approves it in the PayPal popup.
+        onApprove: function (data, actions) {
+            return fetch('/Checkout/CaptureOrder', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    orderID: data.orderID || data.orderId
+                })
+            })
+                .then(function (res) { return res.json(); })
+                .then(function (orderData) {
+                    if (!orderData.id) {
+                        throw new Error(orderData.details || 'Capture failed');
+                    }
+                    window.location.href = '/Checkout/Receipt?orderId=' + orderData.id;
+                });
+        },
+
+        onError: function (err) {
+            document.getElementById('result-message').innerText =
+                'Something went wrong with the payment. Please try again.';
+            console.error(err);
+        }
+    }).render('#paypal-button-container');
+</script>
